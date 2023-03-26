@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card = (props) => {
-    const { balance, email, gender, name, _id } = props.data;
+    const { balance, gender, name, _id } = props.data;
 
     return (
         <div className="border-2 border-orange-500 rounded-md p-5 space-y-4">
