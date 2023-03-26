@@ -1,9 +1,12 @@
 import React from 'react';
+import { addToDB } from '../utilities/localStorageManage';
 
 const Card = (props) => {
     const { balance, gender, name, _id } = props.data;
 
-    const handleAddToCart = (id) => {};
+    const handleAddToCart = (id) => {
+        addToDB(id);
+    };
     return (
         <div className="border-2 border-orange-500 rounded-md p-5 space-y-4">
             <h2 className="text-2xl font-bold">
