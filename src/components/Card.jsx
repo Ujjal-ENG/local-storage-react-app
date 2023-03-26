@@ -3,6 +3,9 @@ import React from 'react';
 const Card = (props) => {
     const { balance, gender, name, _id } = props.data;
 
+    const handleAddToCart = (id) => {
+        console.log(id);
+    };
     return (
         <div className="border-2 border-orange-500 rounded-md p-5 space-y-4">
             <h2 className="text-2xl font-bold">
@@ -15,7 +18,7 @@ const Card = (props) => {
                 Customer Gender: <span className="text-cyan-600">{gender}</span>
             </h5>
 
-            <button type="button" className="border px-4 py-1 font-bold text-xl">
+            <button type="button" className="border px-4 py-1 font-bold text-xl" onClick={() => handleAddToCart(_id)}>
                 Add to Cart
             </button>
         </div>
