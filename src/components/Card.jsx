@@ -1,11 +1,14 @@
 import React from 'react';
-import { addToDB } from '../utilities/localStorageManage';
+import { addToDB, rmvToDB } from '../utilities/localStorageManage';
 
 const Card = (props) => {
     const { balance, gender, name, _id } = props.data;
 
     const handleAddToCart = (id) => {
         addToDB(id);
+    };
+    const handleRemoveToCart = (id) => {
+        rmvToDB(id);
     };
     return (
         <div className="border-2 border-orange-500 rounded-md p-5 space-y-4">
@@ -21,6 +24,9 @@ const Card = (props) => {
 
             <button type="button" className="border px-4 py-1 font-bold text-xl" onClick={() => handleAddToCart(_id)}>
                 Add to Cart
+            </button>
+            <button type="button" className="border px-4 py-1 font-bold text-xl" onClick={() => handleRemoveToCart(_id)}>
+                Remove to Cart
             </button>
         </div>
     );
