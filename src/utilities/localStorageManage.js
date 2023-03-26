@@ -3,9 +3,8 @@
 export const addToDB = (id) => {
     let shoppingCart;
 
-    // get the shopping Cart
+    // get the shopping Cart from local storage
     const storedCart = localStorage.getItem('shopping-cart');
-
     if (storedCart) {
         shoppingCart = JSON.parse(storedCart);
     } else {
@@ -20,5 +19,7 @@ export const addToDB = (id) => {
     } else {
         shoppingCart[id] = 1;
     }
+
+    // set the qunatity based on the specific id
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
 };
